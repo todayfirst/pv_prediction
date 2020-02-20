@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
-os.chdir('F:\\Downloads\\data')
-from part import config
+import config
 from part import make_blank
 from part import import_data
 from part import import_coms
@@ -17,18 +16,40 @@ from part import mlp_model
 from part import cnn_model
 from part import combine_model
 from part import fit_model
+
 from part import test_model
 from part import write_evaluation_result
 import itertools
 import pickle
 import pandas as pd
 import numpy as np
-third 실험!!!!
+
 import pvlib
 
 
-test로 변경 !!!!!!!!!!
+
 #%%
+
+# all_case_number : 실험 조건 개수 - config.py 에서 설정한 개수
+# site_n : 실험 지역 개수
+# case : 현재 루프의 실험번호
+# each_case : 현재 루프의 실험번호의 조건들 리스트
+# plant_id : 실험 지역 id
+# cap : 해당 실험 지역의 발전용량
+# weather_ele : 날씨 정보 요소
+# comsset : 사용하는 영상의 종류
+# cnn_mode : cnn을 사용하는지 안하는지
+# hours : 예측에 사용될 자료의 시간대
+# no_coms : 위성영상 사용하지 않으려면 1, 사용하면 0
+# patch_size : cnn 시 사용할 패치의 개수
+# layers : cnn 시 레이어 정보
+# combine_layers : cnn 시 레이어 정보
+# numofex : 한 조건당 반복실험 횟수
+# test_mode : 어떤 방식으로 테스트 할지
+# NMAE : nMAE를 계산할 오차들을 저장함
+# sum_nmae : 절대오차들의 합을 계산
+# minute : 분단위의 영상을 위한 변수
+
 all_case_number = len(config.all_case)
 
 ## case = 0
