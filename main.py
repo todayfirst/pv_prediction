@@ -26,6 +26,8 @@ import numpy as np
 
 import pvlib
 
+
+test로 변경 !!!!!!!!!!
 #%%
 all_case_number = len(config.all_case)
 
